@@ -20,10 +20,9 @@ class YaDisk:
             'path': self.name
         }
         response = requests.put(URL, headers=self.headers, params=params)
-        if response.status_code not in (200, 201):
-            raise Exception('Ошибка при создании папки')
-        else:
-            print('Создана папка на Яндекс Диске')
+        # if response.status_code not in (200, 201):
+        #     raise Exception('Ошибка при создании папки')
+        # print('Создана папка на Яндекс Диске')
         return response
 
     def upload_photos(self):
@@ -116,5 +115,5 @@ def main():
     result = disk.create_folder()
     up = disk.upload_photos()
 
-
-main()
+if __name__ == '__main__':
+    main()
